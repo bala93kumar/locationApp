@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"   xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>editLocation</title>
 </head>
 <body>
+
+<form action="updateloc" method="post" >
+
+    <pre>
+        Id:<input type="text" name="id" th:value="${location.id}"  readonly="true"/>
+        Code:<input type="text" name="code" th:value="${location.code}"/>
+        Name:<input type="text" name="name" th:value="${location.name}"/>
+        Type:Urban <input type="radio" name="type" value="urban" th:field="*{location.type}"/>
+        Rural <input type="radio" name="type" value="rural" th:field="*{location.type}"/>
+    <input type="submit" value="save"/>
+    </pre>
+
+</form>
 
 
 </body>
